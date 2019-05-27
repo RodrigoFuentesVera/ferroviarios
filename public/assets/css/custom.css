@@ -2,3 +2,13 @@ label.requerido:after{
     content: " (*)";
     color: red;
 }
+
+.pl-40{
+    padding-left:40px !important;
+}
+.pl-80{
+    padding-left:80px !important;
+}
+.pl-120{
+    padding-left:120px !important;
+}
