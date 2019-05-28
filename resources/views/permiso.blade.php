@@ -1,1 +1,0 @@
-Pagoina de permiso
