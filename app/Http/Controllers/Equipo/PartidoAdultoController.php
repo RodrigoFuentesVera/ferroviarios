@@ -56,9 +56,12 @@ class PartidoAdultoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function crear()
     {
-        //
+        $equipos = Equipo::orderby('equipo')
+                        ->where('id_categoria',1)
+                        ->get();
+        return view('equipo.adulto.partido.crear',compact('equipos'));
     }
 
     /**
@@ -67,7 +70,7 @@ class PartidoAdultoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function guardar(Request $request)
     {
         //
     }

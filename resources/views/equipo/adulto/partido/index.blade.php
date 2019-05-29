@@ -26,6 +26,11 @@ Lista de partidos del equipo adulto
                 <div class="tab-pane active" id="tab_oficial">
                     <div class="box-header with-border">
                         <h3 class="box-title">Partidos Oficiales del Torneo</h3>
+                        <div class="box-tools pull-right">
+                            <a href="{{route('adulto_partido_crear')}}" class="btn btn-block btn-info btn-sm">
+                                <i class="fa fa-fw fa-plus-circle"></i> Nuevo Partido
+                            </a>
+                        </div>
                     </div>
                     <div class="box-body table-responsive">
                         <table class="table table-bordered table-hover table-striped">
@@ -58,6 +63,11 @@ Lista de partidos del equipo adulto
                 <div class="tab-pane" id="tab_amistoso">
                     <div class="box-header with-border">
                         <h3 class="box-title">Partidos Amistoso</h3>
+                        <div class="box-tools pull-right">
+                            <a href="{{route('adulto_partido_crear')}}" class="btn btn-block btn-info btn-sm">
+                                <i class="fa fa-fw fa-plus-circle"></i> Nuevo Partido
+                            </a>
+                        </div>
                     </div>
                     <div class="box-body table-responsive">
                         <table class="table table-bordered table-hover table-striped">

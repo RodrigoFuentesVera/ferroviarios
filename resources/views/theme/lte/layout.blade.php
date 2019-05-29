@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="{{asset("assets/$theme/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css")}}">
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset("assets/$theme/bower_components/select2/dist/css/select2.min.css")}}">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{asset("assets/$theme/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css")}}">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{asset("assets/$theme/plugins/iCheck/all.css")}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
         folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
@@ -75,8 +79,13 @@
         <script src="{{asset("assets/$theme/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js")}}"></script>
         <!-- Select2 -->
         <script src="{{asset("assets/$theme/bower_components/select2/dist/js/select2.full.min.js")}}"></script>
+        <!-- bootstrap datepicker -->
+        <script src="{{asset("assets/$theme/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
+        <!-- iCheck 1.0.1 -->
+        <script src="{{asset("assets/$theme/plugins/iCheck/icheck.min.js")}}"></script>
         <!-- AdminLTE App -->
         <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
+        
         
         <script src="{{asset("assets/js/jquery-validation/jquery.validate.min.js")}}"></script>
         <script src="{{asset("assets/js/jquery-validation/localization/messages_es.min.js")}}"></script>
