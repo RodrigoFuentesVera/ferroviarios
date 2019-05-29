@@ -30,3 +30,8 @@ Route::group(['prefix' => 'finanzas', 'namespace' => 'Finanzas'], function(){
     Route::get('cuotas/registrar', 'RegistrarCuotasController@registrar')->name('registrar_cuotas');
     Route::post('cuotas', 'CuotasController@guardar')->name('guardar_cuota');
 });
+
+Route::group(['prefix' => 'equipo', 'namespace' => 'Equipo'], function(){
+    Route::get('adulto/roster', 'RosterAdultoController@index')->name('adulto_roster');
+    Route::get('adulto/partido', 'PartidoAdultoController@index')->name('adulto_partido');
+});
