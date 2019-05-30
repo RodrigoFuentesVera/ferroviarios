@@ -31,67 +31,27 @@
             <th>Mes</th>
             <th>Pagado/No Pagado</th>
         </tr>
-        <tr>
-            <td>Enero</td>
-            <td>
-                <form action="{{route('guardar_cuota')}}" method="POST">
-                    <button type="submit" class="btn btn-success" style="width: 90px;" title="Pagado">
-                            Pagado
-                    </button>
-                </form>
-            </td>
-        </tr>
-        <tr>
-            <td>Febrero</td>
-            <td>
-                <form action="{{route('guardar_cuota')}}" method="POST">
-                    <button type="submit" class="btn btn-danger" style="width: 90px;" title="No Pagado">
-                            No Pagado
-                    </button>
-                </form>
-            </td>
-        </tr>
-        <tr>
-            <td>Marzo</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Abril</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Mayo</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Junio</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Julio</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Agosto</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Septiembre</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Octubre</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Novimebre</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Diciembre</td>
-            <td></td>
-        </tr>
     </thead>
     <tbody>
+        <input type="hidden" name="hid_id_mes" id="hid_id_mes">
+        @foreach ($meses as $mes)
+            <tr>
+                <td>{{$mes->mes}}</td>
+                <td>
+                    <form action="{{route('guardar_cuota',['id_mes' => $mes->id_mes, 'id_anio' => 5, 'id_integrante' => 65])}}" class="form-guardar_{{$mes->id_mes}}" method="POST">
+                        @csrf @method("post")
+                        @if ($mes->pagado)
+                            <button id="btn_pagar_{{$mes->id_mes}}" type="submit" onclick="javascript:actualizar({{$mes->id_mes}})" class="btn btn-success btn-xs tooltipsC" style="width: 90px;" title="Cambiar Estado">
+                                Pagado
+                            </button>
+                        @else 
+                            <button id="btn_pagar_{{$mes->id_mes}}" type="submit" onclick="javascript:actualizar({{$mes->id_mes}})" class="btn btn-danger btn-xs tooltipsC" style="width: 90px;" title="Cambiar Estado">
+                                No Pagado
+                            </button>
+                        @endif
+                    </form>
+                </td>
+            </tr>
+        @endforeach
     </tbody>
 </table>

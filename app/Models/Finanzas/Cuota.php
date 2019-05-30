@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Cuota extends Model
 {
     protected $table = 'cuota';
-    public $timestamp = false;
+    protected $primary_key = 'id_cuota';
+    public $timestamps = false;
 }

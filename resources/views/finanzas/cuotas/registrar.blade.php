@@ -21,12 +21,9 @@ Registro de cuotas por integrante
             <div class="box-header with-border">
                 <h3 class="box-title">Ingreso de Cuotas</h3>
             </div>
-            <form action="{{route('guardar_cuota')}}" method="POST" id="form-general" class="form-horizontal">
-                @csrf
-                <div class="box-body">
-                    @include('finanzas.cuotas.form')
-                </div>
-            </form>
+            <div class="box-body">
+                @include('finanzas.cuotas.form')
+            </div>
         </div>
     </div>
 </div>

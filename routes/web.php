@@ -28,12 +28,12 @@ Route::group(['prefix' => 'integrante', 'namespace' => 'Integrante'], function()
 
 Route::group(['prefix' => 'finanzas', 'namespace' => 'Finanzas'], function(){
     Route::get('cuotas/registrar', 'RegistrarCuotasController@registrar')->name('registrar_cuotas');
-    Route::post('cuotas', 'CuotasController@guardar')->name('guardar_cuota');
+    Route::post('cuotas/{id_mes}/{id_anio}/{id_integrante}', 'RegistrarCuotasController@guardar')->name('guardar_cuota');
 });
 
 Route::group(['prefix' => 'equipo', 'namespace' => 'Equipo'], function(){
     Route::get('adulto/roster', 'RosterAdultoController@index')->name('adulto_roster');
     Route::get('adulto/partido', 'PartidoAdultoController@index')->name('adulto_partido');
     Route::get('adulto/partido/crear', 'PartidoAdultoController@crear')->name('adulto_partido_crear');
-    //Route::get('adulto/partido', 'PartidoAdultoController@guardar')->name('guardar_partido');
+    Route::get('adulto/partido/{id_partido}/editar', 'PartidoAdultoController@editar')->name('partido_adulto_editar');
 });

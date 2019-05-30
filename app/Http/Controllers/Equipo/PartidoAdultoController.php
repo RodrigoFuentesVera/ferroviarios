@@ -92,9 +92,13 @@ class PartidoAdultoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editar($id)
     {
-        //
+        $partido = Partido::findOrFail($id);
+        $equipos = Equipo::orderby('equipo')
+                        ->where('id_categoria',1)
+                        ->get();
+        return view('equipo.adulto.partido.editar',compact('partido','equipos'));
     }
 
     /**
