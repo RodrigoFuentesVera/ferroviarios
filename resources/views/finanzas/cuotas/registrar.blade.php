@@ -10,6 +10,26 @@ Registro de cuotas por integrante
 
 @section('scripts')
     <script src="{{asset("assets/pages/scripts/finanzas/cuotas/registrar.js")}}"></script>
+    <script>
+        function cambiarIntegrante(){
+
+            id_anio = $('#id_anio').val();
+            id_integrante = $('#id_integrante').val();
+
+            $.ajax({
+                url: "mostrar/"+id_anio+"/"+id_integrante,
+                type: 'GET',
+                success: function (data) {
+                    $('#div_cuotas').html(data);
+                },
+                error: function () {
+
+                }
+            });
+        }
+    </script>
+
+
 @endsection
 
 @section('contenido')

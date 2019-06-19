@@ -8,7 +8,7 @@ use App\Models\Admin\Anio;
 use App\Models\Integrante\Integrante;
 use App\Models\Admin\Mes;
 use App\Models\Finanzas\Cuota;
-use Illuminate\Support\Arr;
+use SebastianBergmann\Environment\Console;
 
 class RegistrarCuotasController extends Controller
 {
@@ -20,27 +20,13 @@ class RegistrarCuotasController extends Controller
     public function registrar()
     {      
         $anios = Anio::orderBy('anio')->get();
-        $meses = Mes::orderBy('id_mes')->get();
-        $cuotas = Cuota::orderBy('id_mes')
-                        ->where('id_anio',5)
-                        ->where('id_integrante',65)
-                        ->get();
         $integrantes = Integrante::orderBy('nombre_integrante')
                                     ->orderBy('apellido_paterno_integrante')
                                     ->orderBy('apellido_materno_integrante')
                                     ->where('vigencia_integrante',1)
                                     ->get();
-
-        foreach($meses as $mes){
-            foreach($cuotas as $cuota){
-                if(!$this->existeCuota($mes, $cuotas)){
-                    $mes->pagado = false;
-                }else{
-                    $mes->pagado = true;
-                }
-            }
-        }
-        return view('finanzas.cuotas.registrar',compact('anios', 'integrantes', 'meses','cuotas'));
+        
+        return view('finanzas.cuotas.registrar',compact('anios', 'integrantes'));
     }
 
     public function existeCuota($mes, $cuotas){
@@ -106,9 +92,23 @@ class RegistrarCuotasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function mostrar($anio=null, $integrante=null)
     {
-        //
+        $meses = Mes::orderBy('id_mes')->get();
+        $cuotas = Cuota::orderBy('id_mes')
+                        ->where('id_anio',$anio)
+                        ->where('id_integrante',$integrante)
+                        ->get();
+
+        foreach($meses as $mes){
+            if(!$this->existeCuota($mes, $cuotas)){
+                $mes->pagado = false;
+            }else{
+                $mes->pagado = true;
+            }
+        }
+
+        return view('finanzas.cuotas.tabla-cuotas')->with('meses',$meses);
     }
 
     /**

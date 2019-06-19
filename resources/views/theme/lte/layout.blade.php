@@ -14,11 +14,17 @@
     <link rel="stylesheet" href="{{asset("assets/$theme/bower_components/Ionicons/css/ionicons.min.css")}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/AdminLTE.min.css")}}">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{asset("assets/$theme/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css")}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
         folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{asset("assets/$theme/plugins/iCheck/all.css")}}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <!-- Select2 -->
+  <link rel="stylesheet" href="{{asset("assets/$theme/bower_components/select2/dist/css/select2.min.css")}}">
 
     @yield('styles')
 
@@ -49,13 +55,8 @@
                     <section class="content-header">
                         <h1>
                             @yield('titulo')
-                            <small>Blank example to the boxed layout</small>
+                            <small>@yield('subtitulo')</small>
                         </h1>
-                        <ol class="breadcrumb">
-                            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                            <li><a href="#">Layout</a></li>
-                            <li class="active">Boxed</li>
-                        </ol>
                     </section>
                     
                     @yield('contenido')
@@ -75,6 +76,12 @@
         <script src="{{asset("assets/$theme/bower_components/fastclick/lib/fastclick.js")}}"></script>
         <!-- AdminLTE App -->
         <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
+        <!-- bootstrap datepicker -->
+        <script src="{{asset("assets/$theme/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
+        <!-- iCheck 1.0.1 -->
+        <script src="{{asset("assets/$theme/plugins/iCheck/icheck.min.js")}}"></script>
+        <!-- Select2 -->
+        <script src="{{asset("assets/$theme/bower_components/select2/dist/js/select2.full.min.js")}}"></script>
         
         
         @yield('scriptsPLugins')

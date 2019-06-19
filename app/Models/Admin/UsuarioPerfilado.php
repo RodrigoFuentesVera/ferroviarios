@@ -4,9 +4,8 @@ namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Perfil extends Model
+class UsuarioPerfilado extends Model
 {
-    protected $primary_key = 'id';
-    protected $table = 'perfil';
+    protected $table = 'usuario_perfilado';
     public $timestamp = false;
 }
